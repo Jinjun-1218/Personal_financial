@@ -1,3 +1,18 @@
 # Personal Financial
 
-个人与群组记账项目。
+一个基于 Spring Boot 的个人与群组记账项目，包含账单记录、分类、收支统计、群组和用户管理接口。
+
+## 技术
+
+Java 11、Spring Boot 2.6、MyBatis Plus、MySQL、Maven。
+
+## 配置
+
+1. 准备 Java 11、Maven 和 MySQL。
+2. 复制 src/main/resources/application.example.yaml 为同目录下的 application.yaml。
+3. 设置数据库连接，并通过环境变量 DB_USERNAME、DB_PASSWORD 和 JWT_SECRET 提供配置。
+4. 使用 Maven 导入或构建项目；运行入口是 com.u.Application。
+
+压缩包内未发现数据库初始化 SQL，运行前需要准备与实体和映射文件匹配的数据库表。
+
+为避免公开敏感数据，本仓库不包含原始数据库密码和密钥，也不包含构建产物、IDE 配置或运行日志。

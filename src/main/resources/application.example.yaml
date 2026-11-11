@@ -1,0 +1,35 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    url: "jdbc:mysql://127.0.0.1:3306/personal_financial?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai"
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: "${DB_USERNAME:root}"
+    password: "${DB_PASSWORD}"
+#logging:
+#  level:
+#    com.u: debug
+logging:
+  file:
+    name: logs/personal-finance.log
+  logback:
+    rollingpolicy:
+      max-history: 30
+      file-name-pattern: D:/大三上文件/软工课设/personal_financial 2/personal_financial/logs/personal-finance-%d{yyyy-MM-dd}.%i.log
+  level:
+    com.u: debug
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+sky:
+  jwt:
+    # 设置jwt签名加密时使用的秘钥
+    user-secret-key: "${JWT_SECRET}"
+    # 设置jwt过期时间
+    user-ttl: 7200000
+    # 设置前端传递过来的令牌名称
+    user-token-name: token
+
+
+
+
