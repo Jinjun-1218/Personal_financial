@@ -18,9 +18,10 @@ import org.springframework.stereotype.Service;
 
 import java.time.Month;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * <p>
@@ -57,7 +58,7 @@ public class MonthStatisticsUserServiceImpl extends ServiceImpl<MonthStatisticsU
         }
 
         // 用 Map 来存储每月的收支数据
-        Map<Month, float[]> monthlyStats = new HashMap<>();
+        Map<Month, float[]> monthlyStats = new EnumMap<>(Month.class);
 
         // 初始化每月的收支
         //Month.values() 方法：
@@ -121,7 +122,7 @@ public class MonthStatisticsUserServiceImpl extends ServiceImpl<MonthStatisticsU
         }
 
         // 用 Map 来存储每年的收支数据
-        Map<Integer, float[]> yearlyStats = new HashMap<>();
+        Map<Integer, float[]> yearlyStats = new TreeMap<>();
 
         // 按年份和类型统计收入和支出
         for (FinancialBill bill : bills) {
