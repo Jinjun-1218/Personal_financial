@@ -13,3 +13,4 @@ Java 11、Spring Boot 2.6、MyBatis Plus、MySQL、Maven。
 3. 设置数据库连接，并通过环境变量 DB_USERNAME、DB_PASSWORD 和 JWT_SECRET 提供配置。
 4. 使用 Maven 导入或构建项目；运行入口是 com.u.Application。
 
+请将包含实际数据库凭据或 JWT 密钥的 `application.yaml` 保留在本地，避免提交到版本库。
